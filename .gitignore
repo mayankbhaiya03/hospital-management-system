@@ -1,0 +1,11 @@
+# Backend compiled class files and binaries
+backend/target/
+backend/.idea/
+backend/*.iml
+
+# Exclude local dev properties from version control
+backend/src/main/resources/application-dev.properties
+
+# OS files
+.DS_Store
+Thumbs.db
