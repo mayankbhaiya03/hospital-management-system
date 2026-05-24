@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@theme {
+  --color-hospital-50: #f0f9ff;
+  --color-hospital-100: #e0f2fe;
+  --color-hospital-200: #bae6fd;
+  --color-hospital-500: #0ea5e9;
+  --color-hospital-600: #0284c7;
+  --color-hospital-700: #0369a1;
+  --color-hospital-800: #075985;
+}
+
+@layer base {
+  body {
+    font-family: 'Outfit', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom Scrollbar for dashboard panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Soft transition classes for premium hover effects */
+.transition-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
