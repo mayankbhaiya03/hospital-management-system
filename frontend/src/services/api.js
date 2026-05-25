@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:8080/api',
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8080/api',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -84,7 +84,7 @@ export const billingAPI = {
   getAll: () => API.get('/billing'),
   getByPatient: (patientId) => API.get(`/billing/patient/${patientId}`),
   getById: (id) => API.get(`/billing/${id}`),
-  calculate: (patientId, admissionId, surgeryId, otherCharges) => 
+  calculate: (patientId, admissionId, surgeryId, otherCharges) =>
     API.get(`/billing/calculate?patientId=${patientId}${admissionId ? `&admissionId=${admissionId}` : ''}${surgeryId ? `&surgeryId=${surgeryId}` : ''}${otherCharges ? `&otherCharges=${otherCharges}` : ''}`),
   createBill: (data) => API.post('/billing', data),
   pay: (id, data) => API.post(`/billing/${id}/pay`, data),
